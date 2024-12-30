@@ -1,0 +1,27 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.4",
+	"Category": "",
+	"Description": "",
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		},
+		{
+			"Name": "Master_Materials",
+			"Enabled": false
+		},
+		{
+			"Name": "PythonAutomationTest",
+			"Enabled": false
+		},
+		{
+			"Name": "PythonFoundationPackages",
+			"Enabled": false
+		}
+	]
+}
