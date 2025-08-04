@@ -1,0 +1,21 @@
+import os
+import maya.cmds as cmds
+
+def import_fbx_from_appdata(file_name):
+    # Get the current user's AppData/Local directory
+    app_data_path = os.path.join(os.getenv('LOCALAPPDATA'), 'UEtoMAYATemp', file_name)
+    
+    if not os.path.exists(app_data_path):
+        cmds.warning(f"File does not exist at path: {app_data_path}")
+        return
+    
+    # Import the FBX file into Maya
+    try:
+        # Use the FBX import command with the path to the FBX file
+        cmds.file(app_data_path, i=True, type="FBX", options="fbx")
+        print(f"Successfully imported FBX file: {app_data_path}")
+    except Exception as e:
+        cmds.error(f"Failed to import FBX file: {e}")
+
+# Example usage:
+import_fbx_from_appdata('export.fbx')  # Replace with your actual FBX file name
